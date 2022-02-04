@@ -10,7 +10,7 @@ exports.loginUser = (req, res) => {
         .findOne({ email: req.body.email, password: req.body.pass })
         .then(record => {
             if (record) return res.json(record);
-            else return res.status(400).json('User infor wrong');
+            else return res.status(400).json('E-mail and Password combination not valid');
         })
         .catch(err => console.log(err));
 }
